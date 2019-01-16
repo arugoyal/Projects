@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta name="description" content="Chitkara University Website">
+<meta name="author" content="Aru goyal,Avni,Asmita sharma,Ashish chopra">	
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+
+<title>Guestbook - CHITKARA UNIVERSITY</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/scroll.css" />
+<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+<script>
+	function postComment()
+	{
+		var txt="&lsquo;&lsquo; " + document.getElementById("usercomment").value + " &rsquo;&rsquo;";
+		var untxt="- " + document.getElementById("username").value;
+		
+		if(txt=="&lsquo;&lsquo;  &rsquo;&rsquo;" || untxt=="- ")
+		alert("Kindly fill all the fields and then post").
+		
+		else
+		{
+		var newComment = document.createElement("blockquote");
+		var newUserName = document.createElement("p");
+		
+		//Username styles:
+		newUserName.style.textAlign="right";
+		newUserName.style.paddingRight="100px";
+		
+		//Comment styles:
+		newComment.style.background="url('images/bg.png')";
+		newComment.style.padding="10px";
+		newComment.style.borderRadius="3px";
+		newComment.style.borderTopRightRadius="20px";
+		newComment.style.borderBottomLeftRadius="20px";
+
+		newComment.style.color="#eee";
+		
+		newComment.innerHTML=txt;
+		newUserName.innerHTML=untxt;
+		
+		document.getElementById("comments").appendChild(newComment);
+		document.getElementById("comments").appendChild(newUserName);
+
+		document.getElementById("usercomment").value="";
+		}
+	}
+</script>
+</head>
+
+<body class="guestbook">
+
+	<div id="header">
+		<center><a href="index.html"><img id="logo" src="images/logo.png" alt="CHITKARA UNIVERSITY" /></a><div id="tagline">... Authenticity speaks ...</div></center>
+		
+		<div class="socialmedia">
+		<a href=""><img class="social" src="images/facebook.png" /></a>
+		<a href=""><img class="social" src="images/twitter.png" /></a>
+		<a href=""><img class="social" src="images/gplus.png" /></a>
+		<a href=""><img class="social" src="images/in.png" /></a>
+		</div>
+
+		<div class="tollfree">
+			<div class="leftNumber"><div style="font-size:11px;">For more information<br> give a miss call on</div> <b>1800 267 1999</b></div>
+			<div class="rightNumber"><div style="font-size:11px;">Admission Helpline</div> <b>+91 9501105714 <br>+91 9501105715</b></div>
+		</div>
+	</div>
+	
+	<div id="hbar">
+		<marquee>Admissions 2017 of all batches are now closed. Classes of new batches start from 15th August, 2017.  |  All students are requested to fill the feedback form by 10th of November, 2015.</marquee>
+	</div>
+	
+	<div id="container">
+		
+		<div id="sidebar">
+			<a href="index.html" class="home"><div class="side">• &nbsp;Home</div></a>
+			<a href="academic_programs.html" class="academic"><div class="side">• &nbsp;Academic Programs</div></a>
+			
+			<a href="library.html" class="library"><div class="side">• &nbsp;Online Route Allocation</div></a>
+			<a href="admissions.html" class="admissions"><div class="side">• &nbsp;Admissions</div></a>
+			<a href="placement.html" class="placement"><div class="side">• &nbsp;Campus Recruitment</div></a>
+			<a href="research.html" class="research"><div class="side">• &nbsp;Research Programs</div></a>
+			<a href="guestbook.html" class="guestbook"><div class="side">• &nbsp;Guestbook</div></a>
+		</div>
+		
+		<div id="content">	
+			<h1 class="top_h">Perfection is Our Goal</h1>
+
+			<p style="font-family: thinline; line-height: 140%;">Chitkara University prompts you to fill in the Guestbook below, so that we make continuous progress in the right direction of knowledge and wisdom. We sincerely acknowledge the preciousness of your time and will thoughtfully consider any suggestions offered by you here.
+			</p>
+			<br />
+			<br />
+			
+				<div id="comments" style="font-family: Georgia; font-style: italic;">
+					<blockquote class="comment">&lsquo;&lsquo; Hello, CU &rsquo;&rsquo;</blockquote>
+					<p style="text-align: right; margin-right: 100px;">- Ruskin Smith</p>
+					<blockquote class="comment">&lsquo;&lsquo; CU is a college that inspires young minds to explore their potential. &rsquo;&rsquo;</blockquote>
+					<p style="text-align: right; margin-right: 100px;">- Dr. Arvind Singh</p>
+					</div>
+			
+			<br />
+			<span style="font-family: sans-serif; font-weight: bold; margin-right: 20px;">Your Name:</span> <input type="text" size="20" id="username" placeholder="Name" style="padding: 10px; border-radius:10px;" />
+			<br />			<br />
+			<span style="font-family: sans-serif; font-weight: bold; margin-right: 47px;">You say:</span> <textarea style="vertical-align: text-top; padding: 10px; border-radius:10px;" rows="8" cols="80" id="usercomment" placeholder="My views are..."></textarea>
+			<br />
+			<input type="button" value="Post" onClick="postComment()" class="issuebutton" style="width: 100px; margin-left:140px; padding:5px 10px; font-size: 15px; font-family: thinline;" />
+			<hr />	
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
+		
+	</div>
+	
+	<div id="footer">
+	<span id="back-top" title="Scroll to top" style="float:left;"> <a href="#top"><span></span></a></span>
+	<p style="margin-top: 8px;">Developed by &rarr; Aru goyal &bull; Ashish chopra &bull; Asmita sharma &bull; Avni</p>
+	</div>	
+		
+</body>
