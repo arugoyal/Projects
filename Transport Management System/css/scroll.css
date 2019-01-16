@@ -1,0 +1,23 @@
+#back-top a {
+	width: 150px;
+	display: block;
+	text-align: center;
+	font: 11px/100% Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+
+}
+
+#back-top a:hover {
+	color: #fff;
+}
+
+/* arrow icon (span tag) */
+#back-top span {
+	width: 39px;
+	height: 39px;
+	display: block;
+	margin-bottom: 0px;
+	background: url(../images/scroll-to-top.png) no-repeat center center;
+}

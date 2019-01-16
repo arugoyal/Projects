@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="Chitkara University Website">
+<meta name="author" content="Aru goyal,Avni,Asmita sharma,Ashish chopra">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<title>Online Route Allocation - CHITKARA UNIVERSITY</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/scroll.css" />
+<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+<script>
+	var bookcount=0;
+		function addBook( bookID )
+	{	
+	    
+	    bookcount++;
+		if(bookcount<2)
+		{
+		var bookName = document.getElementById(bookID).innerHTML;
+		
+		var newBook = document.createElement("li");
+		newBook.innerHTML=bookName;
+		document.getElementById("selectedBooks").appendChild(newBook);
+		}
+		
+		else
+		{
+		alert("Not more than one route is allowed to be selected");
+		bookcount--;
+		}
+	}
+
+	function delBook()
+	{
+	if(bookcount>0)
+		{bookcount--;
+		book = document.getElementById("selectedBooks");
+		book.removeChild(book.lastChild);
+		}
+	else
+		alert("No route to clear.");
+	}
+	
+	function bookIssue()
+	{
+		if(bookcount==0)
+			alert("No route seleced.");
+		else
+		{
+			var un=prompt("Enter Roll No. ");
+			var ps=prompt("Enter password: ");
+	
+		
+			if((un=="1610991184" && ps=="1610991184") || (un=="1610991188" && ps=="1610991188") || (un=="1610991201" && ps=="1610991201")|| (un=="1610991205" && ps=="1610991205")|| (un=="1610991206" && ps=="1610991206"))
+			{	document.getElementById("logResult").innerHTML="You have issued a route with username "+un+"<br/>";
+			
+				document.getElementById("logResult").style.display="";
+				document.getElementById("logResult").style.background="#ff8";
+				document.getElementById("logResult").style.padding="10px";
+			
+				//HIDING THE BOOK SELECTION INTERFACE:
+				document.getElementById("bookList").style.display="none";
+				document.getElementById("bookSummary").style.display="none";
+				document.getElementsByClassName("issuebutton")[2].style.display="none";
+			}
+			
+			else
+				alert ("Either username or password is wrong.");
+		}
+	}
+	
+	
+</script>
+</head>
+#div_top_hypers {
+    
+    display:inline;      
+}
+<body class="library">
+
+	<div id="header">
+		<center><a href="index.html"><img id="logo" src="images/logo.png" alt="CHITKARA UNIVERSITY" /></a><div id="tagline">... Learning redefined ...</div></center>
+		
+		<div class="socialmedia">
+		<a href=""><img class="social" src="images/facebook.png" /></a>
+		<a href=""><img class="social" src="images/twitter.png" /></a>
+		<a href=""><img class="social" src="images/gplus.png" /></a>
+		<a href=""><img class="social" src="images/in.png" /></a>
+		</div>
+
+		
+	</div>
+	
+	<div id="hbar">
+		<marquee>Admissions 2018 of all batches are now closed. Classes of new batches start from 10th August, 2018.  |  All students are requested to fill the feedback form by 10th of November, 2018.</marquee>
+	</div>
+	
+	<div id="container">
+		
+		<div id="sidebar">
+			<a href="index.html" class="home"><div class="side">• &nbsp;Home</div></a>
+			<a href="academic_programs.html" class="academic"><div class="side">• &nbsp;Academic Programs</div></a>
+			
+			<a href="library.html" class="library"><div class="side">• &nbsp;Online Route Allocation</div></a>
+			<a href="admissions.html" class="admissions"><div class="side">• &nbsp;Admissions</div></a>
+			<a href="placement.html" class="placement"><div class="side">• &nbsp;Campus Recruitment</div></a>
+			<a href="research.html" class="research"><div class="side">• &nbsp;Research Programs</div></a>
+			<a href="guestbook.html" class="guestbook"><div class="side">• &nbsp;Guestbook</div></a>
+		</div>
+		
+		<div id="content">	
+			<h2 class="two_h">Online Route Allocation</h2>
+			
+			<div style="font-family: thinline; line-height: 140%;">
+				<p>
+The centralized Online Route Allocation is a benchmark initiative by Chitkara University.</br>
+Information about Chitkara University (PB) Bus Routes Session 2017-18 is given below.<br />
+Transport is provided for the Students to and from the Chitkara University, Punjab. <br />
+Own fleet of Buses That ply on pre-Decided Routes from <br />
+Chandigarh, <br />
+Mohali, <br />
+Panchkula, <br />
+Kalka, <br />
+Zirakpur, <br />
+Ambala, <br />
+Patiala <br />
+<div class="bus">
+		<a href=""><img class="bus" src="images/Bus-Routes-Of-Chitkara-University-1.jpg"" /></a>
+		<a href=""><img class="bus" src="images/Bus-Routes-Of-Chitkara-University-2.jpg"" /></a>
+		<a href=""><img class="bus" src="images/Bus-Routes-Of-Chitkara-University-3.jpg"" /></a>
+		<a href=""><img class="bus" src="images/Bus-Routes-Of-Chitkara-University-4.jpg"" /></a>
+		<a href=""><img class="bus" src="images/Bus-Routes-Of-Chitkara-University-5.jpg"" /></a>
+		<a href=""><img class="bus" src="images/Bus-Routes-Of-Chitkara-University-6.jpg"" /></a>
+		<a href=""><img class="bus" src="images/Bus-Routes-Of-Chitkara-University-7.jpg"" /></a>
+		
+		</div>
+				</p>
+				<br />
+			
+				<div id="bookList" ; width:250px; padding:5px; margin-top:-20px; margin-left:-20px;">
+				<span style="margin-left: 50px;">SELECT YOUR ROUTE</span>
+					<ul class="books">
+  <table><tr>
+					<td><li id="1" onClick="addBook(this.id)">Route No 1</li></td>
+					<td><li id="2" onClick="addBook(this.id)">Route No 2</li></td>
+					<td><li id="3" onClick="addBook(this.id)">Route No 3</li></td>
+					<td><li id="4" onClick="addBook(this.id)">Route No 4</li></td>
+					<td><li id="5" onClick="addBook(this.id)">Route No 5</li></td>
+					<td><li id="6" onClick="addBook(this.id)">Route No 6</li></td></tr>
+					<tr><td><li id="7" onClick="addBook(this.id)">Route No 7</li></td>
+					<td><li id="8" onClick="addBook(this.id)">Route No 8</li></td>
+					<td><li id="9" onClick="addBook(this.id)">Route No 9 </li></td>
+					<td><li id="10" onClick="addBook(this.id)">Route No 10</li></td>
+					<td><li id="11" onClick="addBook(this.id)">Route No 11</li></td>
+					<td><li id="12" onClick="addBook(this.id)">Route No 12</li></td></tr>
+					<tr><td><li id="13" onClick="addBook(this.id)">Route No 13</li></td>
+					<td><li id="14" onClick="addBook(this.id)">Route No 14</li></td>
+					<td><li id="15" onClick="addBook(this.id)">Route No 15</li></td>
+					<td><li id="21" onClick="addBook(this.id)">Route No 21</li></td>
+					<td><li id="22" onClick="addBook(this.id)">Route No 22</li></td>
+					<td><li id="23" onClick="addBook(this.id)">Route No 23</li></td></tr>
+					<tr><td><li id="24" onClick="addBook(this.id)">Route No 24</li></td>
+					<td><li id="25" onClick="addBook(this.id)">Route No 25</li></td>
+					<td><li id="26" onClick="addBook(this.id)">Route No 26</li></td>
+					<td><li id="31" onClick="addBook(this.id)">Route No 31</li></td>
+					<td><li id="32" onClick="addBook(this.id)">Route No 32</li></td>
+					<td><li id="33" onClick="addBook(this.id)">Route No 33</li></td></tr>
+					<tr><td><li id="34" onClick="addBook(this.id)">Route No 34</li></td>
+					<td><li id="35" onClick="addBook(this.id)">Route No 35</li></td>
+					<td><li id="36" onClick="addBook(this.id)">Route No 36</li></td>
+					<td><li id="37" onClick="addBook(this.id)">Route No 37</li></td>
+					<td><li id="38" onClick="addBook(this.id)">Route No 38</li></td>
+					<td><li id="39" onClick="addBook(this.id)">Route No 39</li></td></tr>
+					<tr><td><li id="40" onClick="addBook(this.id)">Route No 40</li></td>
+					<td><li id="41" onClick="addBook(this.id)">Route No 41</li></td>
+					<td><li id="42" onClick="addBook(this.id)">Route No 42</li></td>
+					<td><li id="43" onClick="addBook(this.id)">Route No 43</li></td>
+					<td><li id="44" onClick="addBook(this.id)">Route No 44</li></td>
+					<td><li id="45" onClick="addBook(this.id)">Route No 45</li></td></tr>
+					<tr><td><li id="46" onClick="addBook(this.id)">Route No 46</li></td>
+					<td><li id="47" onClick="addBook(this.id)">Route No 47</li></td>
+					<td><li id="52" onClick="addBook(this.id)">Route No 52</li></td>
+					<td><li id="54" onClick="addBook(this.id)">Route No 54</li></td>
+					<td><li id="55" onClick="addBook(this.id)">Route No 55</li></td>
+					<td><li id="56" onClick="addBook(this.id)">Route No 56</li></td></tr>
+					<tr><td><li id="57" onClick="addBook(this.id)">Route No 57</li></td>
+					<td><li id="58" onClick="addBook(this.id)">Route No 58</li></td>
+					<td><li id="61" onClick="addBook(this.id)">Route No 61</li></td></tr>
+					</table>
+					</ul>
+					
+					<br />
+					<br />
+					<br />
+				</div>
+
+				<div id="bookSummary" style="float:left; width:100%;height:1000 %">
+					<fieldset>
+					<legend align="center"> <b>YOUR ROUTE SUMMARY</b> </legend>
+					
+						<ul id="selectedBooks"><li>Selected  Route</li></ul>
+
+						<input type="button" value="Remove your selected route" onclick="delBook()"/>
+						
+					
+				</div>
+				
+				<div id="logResult"></div>
+					<center> <button onClick="bookIssue()" class="issuebutton">ALLOCATE THE ROUTE</button> </center>
+			</div>
+			</fieldset>
+			<br />
+			<hr />	
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
+		
+	</div>
+	
+	<div id="footer">
+	<span id="back-top" title="Scroll to top" style="float:left;"> <a href="#top"><span></span></a></span>
+	<p style="margin-top: 8px;">Developed by &rarr; Aru goyal &bull; Ashish chopra &bull; Asmita sharma &bull; Avni</p>
+	</div>	
+		
+</body>
