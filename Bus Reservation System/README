@@ -1,0 +1,3 @@
+Bus Reservation System is a console based project(as technology used is C++) that will ease the problem of allocating seats to the day 
+scholars who travel regularly by the university buses by taking their details and bus route number as input and displaying the seat number
+as output if available and stores the record in a text file.
